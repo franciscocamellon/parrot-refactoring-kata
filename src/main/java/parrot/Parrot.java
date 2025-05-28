@@ -2,35 +2,14 @@ package parrot;
 
 public abstract class Parrot {
 
-    protected final ParrotTypeEnum type;
     protected final int numberOfCoconuts;
     protected final double voltage;
     protected final boolean isNailed;
 
-    public Parrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-        this.type = type;
+    public Parrot(int numberOfCoconuts, double voltage, boolean isNailed) {
         this.numberOfCoconuts = numberOfCoconuts;
         this.voltage = voltage;
         this.isNailed = isNailed;
-    }
-
-    public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
-
-        Parrot parrot;
-
-        switch (type) {
-            case EUROPEAN -> {
-                parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
-            }
-            case AFRICAN -> {
-                parrot = new AfricanParrot(numberOfCoconuts, voltage, isNailed);
-            }
-            case NORWEGIAN_BLUE -> {
-                parrot = new NorwegianParrot(numberOfCoconuts, voltage, isNailed);
-            }
-            default -> throw new IllegalArgumentException("Invalid Parrot type: " + type);
-        }
-        return parrot;
     }
 
     public abstract double getSpeed();
