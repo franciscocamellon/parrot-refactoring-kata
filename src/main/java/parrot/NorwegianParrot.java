@@ -21,4 +21,8 @@ public class NorwegianParrot extends Parrot {
         return voltage > 0 ? "Bzzzzzz" : "...";
     }
 
+    public double getBaseSpeed(double voltage) {
+        return Math.min(24.0, voltage * getBaseSpeed());
+    }
+
 }
