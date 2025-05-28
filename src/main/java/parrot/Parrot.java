@@ -17,17 +17,16 @@ public class Parrot {
     public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
 
         Parrot parrot;
-        parrot = new Parrot(type, numberOfCoconuts, voltage, isNailed);
 
         switch (type) {
             case EUROPEAN -> {
-                parrot = new EuropeanParrot(type, numberOfCoconuts, voltage, isNailed);
+                parrot = new EuropeanParrot(numberOfCoconuts, voltage, isNailed);
             }
             case AFRICAN -> {
-                parrot = new AfricanParrot(type, numberOfCoconuts, voltage, isNailed);
+                parrot = new AfricanParrot(numberOfCoconuts, voltage, isNailed);
             }
             case NORWEGIAN_BLUE -> {
-                parrot = new NorwegianParrot(type, numberOfCoconuts, voltage, isNailed);
+                parrot = new NorwegianParrot(numberOfCoconuts, voltage, isNailed);
             }
             default -> throw new IllegalArgumentException("Invalid Parrot type: " + type);
         }
