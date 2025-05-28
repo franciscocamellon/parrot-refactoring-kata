@@ -11,15 +11,9 @@ public enum ParrotTypeEnum {
         Parrot parrot;
 
         switch (type) {
-            case EUROPEAN -> {
-                parrot = new EuropeanParrot();
-            }
-            case AFRICAN -> {
-                parrot = new AfricanParrot(numberOfCoconuts);
-            }
-            case NORWEGIAN_BLUE -> {
-                parrot = new NorwegianParrot(voltage, isNailed);
-            }
+            case EUROPEAN -> parrot = new EuropeanParrot();
+            case AFRICAN -> parrot = new AfricanParrot(numberOfCoconuts);
+            case NORWEGIAN_BLUE -> parrot = new NorwegianParrot(voltage, isNailed);
             default -> throw new IllegalArgumentException("Invalid Parrot type: " + type);
         }
         return parrot;
