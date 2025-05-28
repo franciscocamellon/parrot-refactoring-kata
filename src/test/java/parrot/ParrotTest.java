@@ -8,9 +8,8 @@ public class ParrotTest {
 
     @Test
     public void testCreateParrotWithUnknownEnumThrowsException() {
-        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
-            ParrotTypeEnum.createParrot(ParrotTypeEnum.BRAZILIAN, 0, 0, false);
-        });
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () ->
+                ParrotTypeEnum.createParrot(ParrotTypeEnum.BRAZILIAN, 0, 0, false));
 
         assertEquals("Invalid Parrot type: BRAZILIAN", exception.getMessage());
     }
