@@ -2,8 +2,8 @@ package parrot;
 
 public class EuropeanParrot extends Parrot {
 
-    protected EuropeanParrot(double voltage, boolean isNailed) {
-        super(voltage, isNailed);
+    protected EuropeanParrot() {
+        super();
     }
 
     @Override
