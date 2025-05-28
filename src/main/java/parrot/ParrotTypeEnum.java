@@ -4,7 +4,8 @@ public enum ParrotTypeEnum {
 
     EUROPEAN,
     AFRICAN,
-    NORWEGIAN_BLUE;
+    NORWEGIAN_BLUE,
+    BRAZILIAN; //artificial type just for testing the switch default type
 
     public static Parrot createParrot(ParrotTypeEnum type, int numberOfCoconuts, double voltage, boolean isNailed) {
 

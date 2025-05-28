@@ -2,9 +2,18 @@ package parrot;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ParrotTest {
+
+    @Test
+    public void testCreateParrotWithUnknownEnumThrowsException() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            ParrotTypeEnum.createParrot(ParrotTypeEnum.BRAZILIAN, 0, 0, false);
+        });
+
+        assertEquals("Invalid Parrot type: BRAZILIAN", exception.getMessage());
+    }
 
     @Test
     public void getSpeedOfEuropeanParrot() {
